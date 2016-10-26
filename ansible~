@@ -1,0 +1,27 @@
+edit: /etc/ansible/ansible.cfg
+Uncomment:
+inventory
+sudo_user = root
+
+add hosts to /etc/ansible/hosts
+example:
+[local]
+localhost
+
+[centos]
+thewizard3.mylabserver.com
+
+[ubuntu]
+thewizard4.mylabserver.com
+
+
+adduser, add to sudoers file with NOPASSWD: ALL
+
+su - ansibleuser 
+ssh-keygen - default values
+ssh-copy-id ansibleuser@nodes
+
+remember to ssh-cpy-id to localhost as well
+
+
+
