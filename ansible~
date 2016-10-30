@@ -23,5 +23,14 @@ ssh-copy-id ansibleuser@nodes
 
 remember to ssh-cpy-id to localhost as well
 
+ansible [group/all] -a [command] - all will run on every node in the /etc/ansible/hosts.
+-a - tells ansible to run everything after the -a
+example: ansible all -a "ls -al /home/ansible"
+-m - use the following module
+example: ansible centos -m copy -a "src=test dest=/tmp/test" - copies a file to the remote group 
+example: ansible centos -s -m yum -a "name=elinks state=latest"
+example: ansible centos -s -m yum -a "name=elinks state=absent"
+-s - run commands as sudo
+
 
 
