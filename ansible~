@@ -30,7 +30,14 @@ example: ansible all -a "ls -al /home/ansible"
 example: ansible centos -m copy -a "src=test dest=/tmp/test" - copies a file to the remote group 
 example: ansible centos -s -m yum -a "name=elinks state=latest"
 example: ansible centos -s -m yum -a "name=elinks state=absent"
+example: ansible centos -s -m user -a "name=testuser"
+example: ansible centos -s -m user -a "name=testuser state=absent" - to remove user
+example: ansible centos -m setup - gather facts about the node/remote host
+example: ansible centos -m setup -a 'filter=*ipv4*' - filter result
+example: ansible centos -m setup --tree facts
+
 -s - run commands as sudo
 
+ansible all --list-hosts - list all hosts in a group
 
 

@@ -1,0 +1,18 @@
+--- # Install Telnet on Centos 7
+
+- hosts: '{{ myhosts }}'
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: '{{ gather }}'
+  vars:
+    myhosts: centos
+    gather: yes
+    pkg: telnet
+  tasks:
+  - name: Install the indicated Software
+    yum:
+      name: '{{ pkg }}'
+      state: latest
+
